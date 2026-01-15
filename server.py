@@ -1,10 +1,12 @@
-from flask import Flask
+from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route("/")
-def home():
-    return "<h1>UwU</h1><p>Wie sie sehen, siehen sie nichts</p>"
+# Static Folders
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)  # 5000 ist Standard für Flask
+@app.get("/")
+async def read_root():
+    return FileResponse("static/index.html") # Returns index.html
