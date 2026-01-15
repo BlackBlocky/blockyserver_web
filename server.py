@@ -10,3 +10,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 @app.get("/")
 async def read_root():
     return FileResponse("static/index.html") # Returns index.html
+
+@app.get("/styles.css")
+async def read_styles():
+    return FileResponse("static/styles.css")
