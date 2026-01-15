@@ -3,6 +3,7 @@ body {
     display: auto;
     justify-content: center;
     align-items: center;
+    color: white;
 
     margin: 0 0 0 0;
     border: 0 0 0 0;
@@ -34,6 +35,12 @@ body {
 
     display: flex;
     justify-content: center;
+}
+
+.buttons-div {
+	background-color: rgba(0, 0, 255, 30);
+	display: flex;
+
 }
 
 h1 {
